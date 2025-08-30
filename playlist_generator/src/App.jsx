@@ -5,7 +5,7 @@ import ChatInterface from "./pages/Chat";
 export default function App() {
   return (
     <Routes>
-      <Route path="/callback" element={<SpotifyLoginPKCE />} />
+      <Route path="/" element={<SpotifyLoginPKCE />} />
       <Route path="/chat" element={<ChatInterface />} />
     </Routes>
   );

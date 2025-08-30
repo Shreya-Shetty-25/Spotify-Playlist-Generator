@@ -1,0 +1,211 @@
+:root {
+  --bg-color: #181818;          /* main background */
+  --header-bg: #242424;         /* header bar */
+  --chat-bg: #1e1e1e;           /* chat area */
+  --bot-msg-bg: #2c2c2c;        /* bot message bubble */
+  --user-msg-bg: #0a84ff;       /* user message bubble */
+  --text-color: #e0e0e0;        /* general text */
+  --accent-color: #0a84ff;      /* buttons, highlights */
+  --playlist-bg: #2c2c2c;       /* playlist box */
+  --delete-btn-bg: #ff4c4c;     /* delete button */
+  --add-btn-bg: #1db954;        /* add playlist button */
+   --playlist-artist: #0a84ff;
+}
+
+/* ---------------- Light Mode ---------------- */
+.light-mode {
+  --bg-color: #f7f8fa;
+  --header-bg: #ffffff;
+  --chat-bg: #eaeaea;
+  --bot-msg-bg: #f1f1f1;
+  --user-msg-bg: #0a84ff;
+  --text-color: #1a1a1a;
+  --accent-color: #0a84ff;
+  --playlist-bg: #f1f1f1;
+  --delete-btn-bg: #ff4c4c;
+  --add-btn-bg: #1db954;
+  --playlist-artist: #0a84ff;
+}
+
+/* ---
+
+/* Chat container background */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+  max-width: 1000px;
+  width: 1000%;
+  margin: 20px 100px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Header */
+.chat-header {
+  padding: 20px;
+  background-color: var(--header-bg);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+/* Chat messages */
+.chat-messages {
+  flex: 1;
+  padding: 15px 20px;
+  overflow-y: auto;
+  background-color: var(--chat-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Messages */
+.message-row {
+  display: flex;
+  justify-content: flex-start;
+}
+.user-message {
+  justify-content: flex-end;
+}
+.message-bubble {
+  padding: 12px 18px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+.user-message .message-bubble {
+  background-color: var(--user-msg-bg);
+  color: #fff;
+}
+.bot-message .message-bubble {
+  background-color: var(--bot-msg-bg);
+  color: var(--text-color);
+}
+
+/* Playlist box */
+.playlist-box {
+  background-color: var(--bot-msg-bg);
+  color: var(--text-color);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+.playlist-box h4 {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+.playlist-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+.playlist-box li {
+  padding: 6px 0;
+  border-bottom: 1px solid #444;
+}
+
+/* Input area */
+.chat-input-container {
+  display: flex;
+  padding: 15px;
+  background-color: var(--header-bg);
+  border-top: 1px solid #333;
+}
+.chat-input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--bot-msg-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+.chat-input:disabled {
+  opacity: 0.6;
+}
+.send-button {
+  margin-left: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--highlight-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Playlist item styling */
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.playlist-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+  position: relative; /* for delete button positioning */
+}
+
+/* Delete button hidden by default */
+.delete-button {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff4d4f;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Show delete button on hover */
+.playlist-item:hover .delete-button {
+  display: inline-block;
+}
+
+.playlist-album-art {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+.playlist-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.playlist-title {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+.playlist-artist {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 5px;
+}
+.playlist-audio {
+  width: 100%;
+}
+.no-preview {
+  font-size: 0.85rem;
+  color: #888;
+}

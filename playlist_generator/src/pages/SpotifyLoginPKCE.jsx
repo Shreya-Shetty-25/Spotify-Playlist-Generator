@@ -3,7 +3,7 @@ import "./SpotifyLogin.css";
 import { useNavigate } from "react-router-dom";
 
 const CLIENT_ID = "2a39eea7c8cb440e8096bbc4ecdade9d";
-const REDIRECT_URI = "http://127.0.0.1:5173/callback";
+const REDIRECT_URI = "https://spotify-playlist-generator-tau.vercel.app/callback";
 const SCOPES = ["user-read-private", "user-read-email","user-top-read"].join(" ");
 
 // Helpers
